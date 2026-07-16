@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر الإخلاص | التشكيلة الجديدة 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #2b1d12; --gold: #c5a021; --bg: #fdfaf5; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Cairo', sans-serif; background-color: var(--bg); color: #333; }
+        
+        nav { background: white; padding: 15px 5%; display: flex; justify-content: center; align-items: center; box-shadow: 0 2px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+        .logo-img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); }
+
+        .container { padding: 40px 5%; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        
+        .card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center; border: 1px solid #eee; transition: 0.3s; }
+        .card:hover { transform: translateY(-10px); border-color: var(--gold); }
+        .card img { width: 100%; height: 450px; object-fit: cover; background: #f0f0f0; }
+        
+        .card-body { padding: 20px; }
+        .card-body h3 { font-family: 'Amiri', serif; font-size: 24px; color: var(--primary); margin-bottom: 10px; }
+        .price { color: var(--gold); font-size: 20px; font-weight: bold; margin-bottom: 15px; display: block; }
+        
+        .btn-order { display: block; background: var(--primary); color: white; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: bold; cursor: pointer; border: none; width: 100%; font-size: 16px; }
+
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); align-items: center; justify-content: center; }
+        .modal-content { background: white; padding: 30px; border-radius: 15px; text-align: center; width: 90%; max-width: 400px; }
+        .wa-link { display: flex; align-items: center; justify-content: center; background: #25D366; color: white; text-decoration: none; padding: 15px; margin: 10px 0; border-radius: 10px; font-weight: bold; }
+
+        footer { background: white; text-align: center; padding: 40px; border-top: 1px solid #eee; margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <img src="brand.png.jpg" alt="لوغو الإخلاص" class="logo-img">
+    </nav>
+
+    <div class="container">
+        <h2 style="text-align: center; margin-bottom: 40px; font-family: 'Amiri'; font-size: 2.5rem; color: var(--primary);">مجموعة عبايات متجر الإخلاص</h2>
+        
+        <div class="grid" id="products">
+            <script>
+                const abayas = [
+                    { img: "IMG-20260125-WA0030.jpg", name: "عباية ملكية سوداء" },
+                    { img: "IMG-20260125-WA0033.jpg", name: "عباية الجوهرة" },
+                    { img: "IMG-20260125-WA0036.jpg", name: "عباية الأميرة" },
+                    { img: "IMG-20260125-WA0039.jpg", name: "عباية كلاسيك فخمة" },
+                    { img: "IMG-20260125-WA0042.jpg", name: "عباية لمسة أناقة" },
+                    { img: "IMG-20260125-WA0045.jpg", name: "عباية السهرة الراقية" },
+                    { img: "IMG-20260125-WA0048.jpg", name: "عباية التميز" },
+                    { img: "IMG-20260125-WA0051.jpg", name: "عباية السلطانة" },
+                    { img: "IMG-20260125-WA0054.jpg", name: "عباية النخبة" }
+                ];
+
+                const grid = document.getElementById('products');
+                abayas.forEach(abaya => {
+                    grid.innerHTML += `
+                        <div class="card">
+                            <img src="${abaya.img}" alt="${abaya.name}">
+                            <div class="card-body">
+                                <h3>${abaya.name}</h3>
+                                <span class="price">450 درهم</span>
+                                <button class="btn-order" onclick="openModal()">اطلبي الآن عبر الواتساب</button>
+                            </div>
+                        </div>
+                    `;
+                });
+            </script>
+        </div>
+    </div>
+
+    <div id="waModal" class="modal" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <h3 style="margin-bottom: 20px;">اختاري رقم الواتساب للطلب:</h3>
+            <a href="https://wa.me/212658208396" class="wa-link" target="_blank">واتساب 1: 0658208396</a>
+            <a href="https://wa.me/212649660614" class="wa-link" target="_blank">واتساب 2: 0649660614</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 متجر الإخلاص - تصميم عمران شتوان</p>
+    </footer>
+
+    <script>
+        function openModal() { document.getElementById("").style.display = "flex"; }
+        function closeModal() { document.getElementById("waModal").style.display = "none"; }
+    </script>
+</body>
+</html>
