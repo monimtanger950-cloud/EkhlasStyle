@@ -1,0 +1,62 @@
+Please build a modern, high-end, extremely professional E-Commerce Web Application for an Abaya & Modest Fashion Brand.
+
+### 0. Existing Product Images Setup:
+- Use the following exact uploaded image filenames directly for the product database and mock data:
+  - 1000064450.jpg
+  - 1000064452.jpg
+  - 1000064454.jpg
+  - 1000064456.jpg
+  - 1000064458.jpg
+  - 1000064460.jpg
+  - 1000064462.jpg
+  - 1000064464.jpg
+  - 1000064466.jpg
+- Assign realistic Abaya title, category, size/color options, and prices to each of these image files in the application state.
+
+### 1. Visual & Image Enhancement Requirements:
+- Use CSS and Modern Web Design techniques (card shadows, smooth rounded borders, elegant padding, aspect-ratio containers, and high-definition filters) to make product images look ultra-crisp, bright, and luxury-tier.
+- Implement an **Interactive Image Zoom Feature**: When the user hovers over or clicks/taps a product image, open a high-resolution Lightbox / Modal with smooth Pinch-to-Zoom / Magnifier functionality.
+
+### 2. Multi-Language Support (10+ Languages):
+- Add a clean Language Selector in the Top Header/Navbar with flags/icons supporting at least 10 languages:
+  1. Arabic (RTL support enabled)
+  2. French
+  3. English
+  4. Spanish
+  5. German
+  6. Dutch
+  7. Italian
+  8. Turkish
+  9. Russian
+  10. Chinese
+- Ensure seamless translation of all menu items, UI elements, buttons, and checkout forms.
+
+### 3. Layout & Navigation Features:
+- **Header & Navbar:**
+  - Modern Sticky Navbar featuring the Brand Logo, Navigation Menu (Home, Shop, Categories, About Us, Contact), Language Switcher, Search Bar, and Dynamic Shopping Cart Icon with badge count.
+- **Product Display Grid:**
+  - Responsive Grid showing the products with elegant cards.
+  - Under each product image, display:
+    * Product Title / Name
+    * Category Tag (e.g., Silk Abaya, Butterfly Abaya, Casual Dress)
+    * Price & Original Price (with discount badge if applicable)
+    * Available Colors & Sizes (S, M, L, XL, XXL)
+    * Short description highlighting fabric quality and craftsmanship.
+    * "Quick View" button & "Add to Cart" button.
+
+### 4. Interactive Shopping Cart & WhatsApp Checkout Flow:
+- **Shopping Cart Modal / Side Drawer:**
+  - Dynamic Cart where customers can see their selected items, adjust quantities, view total price, and proceed to checkout.
+- **Seamless WhatsApp Order Modal:**
+  - When a customer clicks "Order via WhatsApp" or "Complete Order", open a sleek modal requesting:
+    1. Full Name
+    2. Phone / WhatsApp Number
+    3. Delivery City & Address
+    4. Selected Size & Color
+    5. Notes / Special Instructions
+  - Once submitted, automatically format the entire order (items, total amount, customer details) into a pre-filled WhatsApp message and redirect directly to WhatsApp with the merchant's number.
+
+### 5. UI/UX Style & Design Aesthetic:
+- Ultra-clean, luxury, minimalist aesthetic using warm neutral accents (Gold / Emerald / Rose-Beige / Charcoal Black).
+- Mobile-first responsive layout (looks flawless on phones, tablets, and desktops).
+- Smooth CSS animations, micro-interactions, hover effects, and clean typography.
