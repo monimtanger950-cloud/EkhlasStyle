@@ -84,9 +84,9 @@ export function QuickViewModal() {
 
                   {/* Price */}
                   <div className="flex items-baseline gap-3 mb-5">
-                    <span className="text-3xl font-bold text-amber-800">${product.price}</span>
+                    <span className="text-3xl font-bold text-amber-800">{product.price} MAD</span>
                     {product.originalPrice && (
-                      <span className="text-lg text-stone-400 line-through">${product.originalPrice}</span>
+                      <span className="text-lg text-stone-400 line-through">{product.originalPrice} MAD</span>
                     )}
                     {product.discount && (
                       <span className="text-sm font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded-full">-{product.discount}%</span>

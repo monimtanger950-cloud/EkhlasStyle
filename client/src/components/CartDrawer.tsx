@@ -118,7 +118,7 @@ export function CartDrawer() {
                           </div>
                           <div className="flex items-center justify-between">
                             <span className="font-bold text-amber-800">
-                              ${(item.product.price * item.quantity).toFixed(0)}
+                              {(item.product.price * item.quantity).toFixed(0)} MAD
                             </span>
                             {/* Qty Controls */}
                             <div className="flex items-center gap-1">
@@ -162,7 +162,7 @@ export function CartDrawer() {
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm text-stone-500">
                     <span>{tr.subtotal}</span>
-                    <span>${subtotal.toFixed(0)}</span>
+                    <span>{subtotal.toFixed(0)} MAD</span>
                   </div>
                   <div className="flex justify-between text-sm text-emerald-600 font-medium">
                     <span>{tr.shipping}</span>
@@ -170,7 +170,7 @@ export function CartDrawer() {
                   </div>
                   <div className="flex justify-between font-bold text-stone-800 text-lg pt-2 border-t border-stone-100">
                     <span>{tr.total}</span>
-                    <span className="text-amber-800">${subtotal.toFixed(0)}</span>
+                    <span className="text-amber-800">{subtotal.toFixed(0)} MAD</span>
                   </div>
                 </div>
 

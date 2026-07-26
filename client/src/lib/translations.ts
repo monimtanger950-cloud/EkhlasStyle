@@ -39,7 +39,7 @@ type Translations = Record<LangCode, Record<TranslationKey, string>>;
 
 export const t: Translations = {
   ar: {
-    brand: 'دار نساء',
+    brand: 'متجر إخلاص',
     home: 'الرئيسية',
     shop: 'المتجر',
     categories: 'التصنيفات',
@@ -100,7 +100,7 @@ export const t: Translations = {
     specialNotes: 'ملاحظات خاصة',
   },
   en: {
-    brand: 'Dar Nisaa',
+    brand: 'Matjar Elikhlass',
     home: 'Home',
     shop: 'Shop',
     categories: 'Categories',
@@ -161,7 +161,7 @@ export const t: Translations = {
     specialNotes: 'Special Notes',
   },
   fr: {
-    brand: 'Dar Nisaa',
+    brand: 'Matjar Elikhlass',
     home: 'Accueil',
     shop: 'Boutique',
     categories: 'Catégories',
@@ -222,7 +222,7 @@ export const t: Translations = {
     specialNotes: 'Notes Spéciales',
   },
   es: {
-    brand: 'Dar Nisaa',
+    brand: 'Matjar Elikhlass',
     home: 'Inicio',
     shop: 'Tienda',
     categories: 'Categorías',
@@ -283,7 +283,7 @@ export const t: Translations = {
     specialNotes: 'Notas Especiales',
   },
   de: {
-    brand: 'Dar Nisaa',
+    brand: 'Matjar Elikhlass',
     home: 'Startseite',
     shop: 'Shop',
     categories: 'Kategorien',
@@ -344,7 +344,7 @@ export const t: Translations = {
     specialNotes: 'Besondere Hinweise',
   },
   nl: {
-    brand: 'Dar Nisaa',
+    brand: 'Matjar Elikhlass',
     home: 'Home',
     shop: 'Winkel',
     categories: 'Categorieën',
@@ -405,7 +405,7 @@ export const t: Translations = {
     specialNotes: 'Speciale Opmerkingen',
   },
   it: {
-    brand: 'Dar Nisaa',
+    brand: 'Matjar Elikhlass',
     home: 'Home',
     shop: 'Negozio',
     categories: 'Categorie',
@@ -466,7 +466,7 @@ export const t: Translations = {
     specialNotes: 'Note Speciali',
   },
   tr: {
-    brand: 'Dar Nisaa',
+    brand: 'Matjar Elikhlass',
     home: 'Ana Sayfa',
     shop: 'Mağaza',
     categories: 'Kategoriler',
@@ -527,7 +527,7 @@ export const t: Translations = {
     specialNotes: 'Özel Notlar',
   },
   ru: {
-    brand: 'Дар Нисаа',
+    brand: 'Matjar Elikhlass',
     home: 'Главная',
     shop: 'Магазин',
     categories: 'Категории',
@@ -588,7 +588,7 @@ export const t: Translations = {
     specialNotes: 'Особые Пожелания',
   },
   zh: {
-    brand: '达尔·尼萨',
+    brand: 'متجر إخلاص',
     home: '首页',
     shop: '商店',
     categories: '分类',

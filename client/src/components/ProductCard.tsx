@@ -186,9 +186,9 @@ export function ProductCard({ product, index }: Props) {
         {/* Price */}
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-baseline gap-2">
-            <span className="text-xl font-bold text-amber-800">${product.price}</span>
+            <span className="text-xl font-bold text-amber-800">{product.price} MAD</span>
             {product.originalPrice && (
-              <span className="text-sm text-stone-400 line-through">${product.originalPrice}</span>
+              <span className="text-sm text-stone-400 line-through">{product.originalPrice} MAD</span>
             )}
           </div>
           {product.discount && (

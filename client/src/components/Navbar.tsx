@@ -43,13 +43,17 @@ export function Navbar() {
 
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="/" className="flex items-center gap-2 group">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-600 to-amber-800 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
-                <span className="text-white font-bold text-sm font-display">دن</span>
+            <a href="/" className="flex items-center gap-2.5 group">
+              <div className="w-11 h-11 rounded-full overflow-hidden shadow-lg ring-2 ring-amber-200 group-hover:scale-105 group-hover:ring-amber-400 transition-all duration-300 flex-shrink-0">
+                <img
+                  src="/logo.jpg"
+                  alt="متجر إخلاص"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="hidden sm:block">
-                <div className="font-display font-bold text-amber-800 text-lg leading-none tracking-tight">{tr.brand}</div>
-                <div className="text-[10px] text-amber-600 tracking-widest uppercase font-medium">Modest Fashion</div>
+                <div className="font-display font-bold text-amber-800 text-[17px] leading-none tracking-tight">متجر إخلاص</div>
+                <div className="text-[10px] text-amber-600 tracking-widest uppercase font-medium mt-0.5">matjar_elikhlass</div>
               </div>
             </a>
           </div>

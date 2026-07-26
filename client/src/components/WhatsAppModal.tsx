@@ -4,8 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useStore } from '@/lib/store';
 import { t } from '@/lib/translations';
 
-// Replace with your actual WhatsApp business number (country code + number, no +)
-const WHATSAPP_NUMBER = '966500000000';
+// Primary WhatsApp number for Matjar Elikhlass
+const WHATSAPP_NUMBER = '212649660614';
 
 export function WhatsAppModal() {
   const { lang, cart, whatsappOpen, setWhatsappOpen, clearCart } = useStore();
@@ -42,7 +42,7 @@ export function WhatsAppModal() {
     // Build order message
     const orderLines = cart.map((item, i) => {
       const title = lang === 'ar' ? item.product.titleAr : item.product.titleEn;
-      return `${i + 1}. ${title} — ${tr.size}: ${item.selectedSize} — ${tr.quantity}: ${item.quantity} — $${item.product.price * item.quantity}`;
+      return `${i + 1}. ${title} — ${tr.size}: ${item.selectedSize} — ${tr.quantity}: ${item.quantity} — ${item.product.price * item.quantity} MAD`;
     }).join('\n');
 
     const divider = '─────────────────────';
@@ -58,7 +58,7 @@ export function WhatsAppModal() {
       `🧾 *${tr.orderDetails}:*`,
       orderLines,
       divider,
-      `💰 *${tr.total}: $${subtotal.toFixed(0)}*`,
+      `💰 *${tr.total}: ${subtotal.toFixed(0)} MAD*`,
       `🚚 *${tr.shipping}: ${tr.freeShipping}*`,
       divider,
     ].filter(Boolean).join('\n');
@@ -150,7 +150,7 @@ export function WhatsAppModal() {
                               </div>
                             </div>
                             <span className="font-bold text-amber-800 flex-shrink-0 ms-2">
-                              ${item.product.price * item.quantity}
+                              {item.product.price * item.quantity} MAD
                             </span>
                           </div>
                         );
@@ -158,7 +158,7 @@ export function WhatsAppModal() {
                     </div>
                     <div className="mt-3 pt-3 border-t border-amber-100 flex justify-between font-bold text-amber-800">
                       <span>{tr.total}</span>
-                      <span>${subtotal.toFixed(0)}</span>
+                      <span>{subtotal.toFixed(0)} MAD</span>
                     </div>
                   </div>
                 )}
