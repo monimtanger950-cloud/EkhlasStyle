@@ -105,7 +105,7 @@ export default function Home() {
               ].map((tag) => (
                 <span
                   key={tag}
-                  className="inline-flex items-center gap-1 bg-white border border-amber-200 text-amber-800 text-sm font-semibold px-3 py-1.5 rounded-full shadow-sm"
+                  className="glass-panel inline-flex items-center gap-1 text-amber-800 text-sm font-semibold px-3 py-1.5 rounded-full"
                 >
                   <span className="text-amber-500">✦</span> {tag}
                 </span>
@@ -171,6 +171,36 @@ export default function Home() {
                 </div>
               ))}
             </motion.div>
+
+            {/* Keep the product-led banner visible on phones and tablets too. */}
+            <motion.div
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.85, duration: 0.5 }}
+              className="lg:hidden relative mt-8 mx-auto w-full max-w-md h-48 sm:h-60"
+              aria-label={lang === 'ar' ? 'تشكيلة متجر إخلاص' : 'Matjar Elikhlass collection'}
+            >
+              <div className="hero-float hero-tile-glow absolute left-[8%] top-0 h-full w-[42%] overflow-hidden rounded-3xl shadow-2xl">
+                <img
+                  src="/products/product1.jpg"
+                  alt={lang === 'ar' ? 'عباية زرقاء أنيقة' : 'Elegant blue abaya'}
+                  className="h-full w-full object-cover object-top"
+                  loading="eager"
+                  fetchPriority="high"
+                />
+              </div>
+              <div
+                className="hero-float hero-tile-glow absolute right-[8%] top-3 h-[90%] w-[42%] overflow-hidden rounded-3xl shadow-2xl"
+                style={{ animationDelay: '-3s' }}
+              >
+                <img
+                  src="/products/product4.jpg"
+                  alt={lang === 'ar' ? 'عباية زمردية فاخرة' : 'Luxury emerald abaya'}
+                  className="h-full w-full object-cover object-top"
+                  loading="eager"
+                />
+              </div>
+            </motion.div>
           </motion.div>
 
           {/* Hero Image Grid */}
@@ -181,19 +211,19 @@ export default function Home() {
             className="hidden lg:grid grid-cols-2 gap-4 h-[520px]"
           >
             <div className="space-y-4">
-              <div className="h-72 rounded-3xl overflow-hidden shadow-2xl">
-                <img src="/products/product1.jpg" alt="Abaya" className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700" style={{ filter: 'brightness(1.03) saturate(1.1)' }} />
+              <div className="hero-float hero-tile-glow h-72 rounded-3xl overflow-hidden shadow-2xl">
+                <img src="/products/product1.jpg" alt="Abaya" loading="eager" fetchPriority="high" decoding="async" className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700" style={{ filter: 'brightness(1.03) saturate(1.1)' }} />
               </div>
-              <div className="h-44 rounded-3xl overflow-hidden shadow-xl">
-                <img src="/products/product4.jpg" alt="Abaya" className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700" style={{ filter: 'brightness(1.03) saturate(1.1)' }} />
+              <div className="hero-float hero-tile-glow h-44 rounded-3xl overflow-hidden shadow-xl">
+                <img src="/products/product4.jpg" alt="Abaya" loading="lazy" decoding="async" className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700" style={{ filter: 'brightness(1.03) saturate(1.1)' }} />
               </div>
             </div>
             <div className="space-y-4 pt-8">
-              <div className="h-44 rounded-3xl overflow-hidden shadow-xl">
-                <img src="/products/product7.jpg" alt="Abaya" className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700" style={{ filter: 'brightness(1.03) saturate(1.1)' }} />
+              <div className="hero-float hero-tile-glow h-44 rounded-3xl overflow-hidden shadow-xl">
+                <img src="/products/product7.jpg" alt="Abaya" loading="lazy" decoding="async" className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700" style={{ filter: 'brightness(1.03) saturate(1.1)' }} />
               </div>
-              <div className="h-72 rounded-3xl overflow-hidden shadow-2xl">
-                <img src="/products/product9.jpg" alt="Abaya" className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700" style={{ filter: 'brightness(1.03) saturate(1.1)' }} />
+              <div className="hero-float hero-tile-glow h-72 rounded-3xl overflow-hidden shadow-2xl">
+                <img src="/products/product9.jpg" alt="Abaya" loading="lazy" decoding="async" className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700" style={{ filter: 'brightness(1.03) saturate(1.1)' }} />
               </div>
             </div>
           </motion.div>

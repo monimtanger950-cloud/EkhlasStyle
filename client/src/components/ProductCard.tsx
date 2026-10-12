@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ShoppingBag, Eye, Star, ZoomIn } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useSpring } from 'framer-motion';
 import { useStore } from '@/lib/store';
 import { t } from '@/lib/translations';
 import type { Product } from '@/lib/products';
@@ -39,6 +39,25 @@ export function ProductCard({ product, index }: Props) {
   const [selectedColor, setSelectedColor] = useState(product.colors[0]);
   const [isHovered, setIsHovered] = useState(false);
   const [addedFeedback, setAddedFeedback] = useState(false);
+  const targetRotateX = useMotionValue(0);
+  const targetRotateY = useMotionValue(0);
+  const rotateX = useSpring(targetRotateX, { stiffness: 220, damping: 24 });
+  const rotateY = useSpring(targetRotateY, { stiffness: 220, damping: 24 });
+
+  const handlePointerMove = (event: React.PointerEvent<HTMLDivElement>) => {
+    if (event.pointerType !== 'mouse') return;
+    const bounds = event.currentTarget.getBoundingClientRect();
+    const x = (event.clientX - bounds.left) / bounds.width;
+    const y = (event.clientY - bounds.top) / bounds.height;
+    targetRotateY.set((x - 0.5) * 7);
+    targetRotateX.set((0.5 - y) * 7);
+  };
+
+  const resetTilt = () => {
+    setIsHovered(false);
+    targetRotateX.set(0);
+    targetRotateY.set(0);
+  };
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -67,9 +86,16 @@ export function ProductCard({ product, index }: Props) {
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.45, delay: index * 0.07, ease: [0.22, 1, 0.36, 1] }}
+      style={{
+        rotateX,
+        rotateY,
+        transformPerspective: 1100,
+        transformStyle: 'preserve-3d',
+      }}
       onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      className="group bg-white rounded-3xl overflow-hidden shadow-[0_2px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_50px_rgba(0,0,0,0.13)] transition-all duration-500 border border-stone-100/80"
+      onPointerMove={handlePointerMove}
+      onPointerLeave={resetTilt}
+      className="group bg-white rounded-3xl overflow-hidden shadow-[0_2px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_50px_rgba(0,0,0,0.13)] transition-shadow duration-500 border border-stone-100/80 will-change-transform"
     >
       {/* Image Container */}
       <div className="relative overflow-hidden aspect-[3/4] bg-gradient-to-br from-stone-50 to-stone-100 cursor-pointer"
@@ -78,6 +104,8 @@ export function ProductCard({ product, index }: Props) {
           src={product.image}
           alt={title}
           className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
+          loading="lazy"
+          decoding="async"
           style={{
             filter: 'brightness(1.03) contrast(1.02) saturate(1.08)',
           }}

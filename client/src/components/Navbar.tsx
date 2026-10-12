@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ShoppingBag, Search, X, Menu, Globe, ChevronDown } from 'lucide-react';
+import { ShoppingBag, Search, X, Menu, ChevronDown } from 'lucide-react';
 import { useStore } from '@/lib/store';
 import { t, languages } from '@/lib/translations';
 import { motion, AnimatePresence } from 'framer-motion';
